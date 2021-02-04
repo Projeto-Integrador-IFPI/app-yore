@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Inscreva-se no YORE</title>
+</head>
+
+<body id="app">
+    <main id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sign-cover col-md-5">
+                    <div class="content">
+                        <div class="sign-header--cover">
+                            <div class="logo">
+                                <img src="/img/YORE.svg" class="pb-4" alt="Logo do YORE">
+                            </div>
+                            <div class="legends mt-3">
+                                <h3 class="title mb-3">Faça seu cadastro e comece a organizar seu negócio.</h3>
+                                <p class="subtitle">É simples, rápido e seguro.</p>
+                            </div>
+                        </div>
+                        <div class="backdrop-img mt-2">
+                            <img src="/img/register-cover.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-form col-md-7 black">
+                    <div class="content padding">
+                        <form action="/register" method="POST" class="form">
+                            <div class="sign-social--media mb-4">
+                                <p class="mb-3">Inscreva-se grátis e comece a trabalhar.</p>
+                                <a href="#" class="btn btn-facebook border-radius"><i class='bx bxl-facebook'></i>Inscrever-se com o Facebook</a>
+                            </div>
+                            <div class="divider-or">
+                                <span></span>
+                                <p>ou</p>
+                                <span></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 input-area">
+                                    <label for="nome" class="form-label label mt-1">Nome completo</label>
+                                    <input type="text" class="input form-control" name="nome" id="nome" required>
+                                    <small id="erro-nome" style="font-weight: 600; color: var(--color-red);"></small>
+                                </div>
+                                <div class="col-md-6 input-area">
+                                    <label for="username" class="form-label label mt-1">Nome de usuário</label>
+                                    <input type="text" class="input form-control" name="username" id="username" required>
+                                    <small id="erro-username" style="font-weight: 600; color: var(--color-red);"></small>
+                                </div>
+                                <div class="col-md-12 input-area">
+                                    <label for="nascimento" class="form-label label mt-1">Data de nascimento</label>
+                                    <input type="date" class="input form-control" name="nascimento" id="nascimento" required>
+                                    <small id="erro-nascimento" style="font-weight: 600; color: var(--color-red);"></small>
+                                </div>
+                                <div class="col-md-12 input-area">
+                                    <label for="senha" class="form-label label mt-1">Senha</label>
+                                    <input type="password" class="input form-control" name="senha" id="senha" required>
+                                    <small id="erro-password" style="font-weight: 600; color: var(--color-red);"></small>
+                                </div>
+                                <!-- <div class="col-6 input-area">
+                                    <label for="confirmar_senha" class="form-label label mt-2">Repetir senha</label>
+                                    <input type="password" class="input form-control" name="confirmar_senha" id="confirmar_senha" required>
+                                    <small id="erro-repetir_senha" style="font-weight: 600; color: var(--color-red);"></small>
+                                </div> -->
+                                <div class="col-md-12 btn-group mt-4">
+                                    <button type="submit" class="btn btn-registro border-radius" onclick="verify()">Inscrever-se no YORE</button>
+                                </div>
+                            </div>
+                            <div class="divider">
+                                <span></span>
+                            </div>
+                            <div class="sign-link">
+                                <p class="mb-3">Já possui uma conta?</p>
+                                <a href="/" class="btn btn-sign--link border-radius">Faça login no YORE</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer blacked">
+        <p>Copyright &copy2020 Alguns direitos reservados | <span>YORE</span></p>
+    </footer>
+</body>
+
+<script src="/js/verifyInputs.js"></script>
+
+</html>

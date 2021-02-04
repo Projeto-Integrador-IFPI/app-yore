@@ -1,0 +1,50 @@
+<%- contentFor('main') %>
+    <div class="pt-2">
+        <h2 class="sec-title">Cadastrar itens do pedido</h2>
+    </div>
+    <div class="form-area mt-3">
+        <form class="form-area--inputs">
+            <fieldset class="fieldset border-radius">
+                <legend>Itens do pedido</legend>
+                <div class="form-row">
+                    <div class="col-md-4 input-area">
+                        <label for="" class="form-label label">Nome do produto</label>
+                        <input type="text" class="input form-control" id="">
+                    </div>
+                    <div class="col-md-4 input-area">
+                        <label for="" class="form-label label">Quantidade</label>
+                        <input type="number" class="input form-control" id="">
+                    </div>
+                    <div class="col-md-4 input-area">
+                        <label for="" class="form-label label">Preço do produto</label>
+                        <input type="text" class="input form-control" id="">
+                    </div>
+                    <button class="btn btn-incluir border-radius">
+                    <i class='bx bx-plus'></i><span>Incluir produto</span>
+                </button>
+                </div>
+            </fieldset>
+            <div class="form-row">
+                <div class="col-12 btn-group mt-4">
+                    <a href="/area-pedidos" class="btn btn-done border-radius p-2" style="text-decoration: none;">Concluir pedido</a>
+                    <a href="/area-pedidos" class="btn btn-clear border-radius p-2" style="text-decoration: none;">Voltar aos pedidos</a>
+                </div>
+            </div>
+        </form>
+        <div class="card blacked border-radius">
+            <div class="card-header purple semi-radius">
+                <p class="title">Itens do pedido</p>
+            </div>
+            <div class="card-body">
+                <ul class="historic-requests">
+                    <li class="historic-request-item">
+                        <p class="item-name">Produto: Açucar Mascavo - 2 Unidades</p>
+                        <ul class="item-info task-info">
+                            <p class="item-price">Valor do Produto: R$ 55,00</p>
+                        </ul>
+                    </li>
+                    <button class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-red); color: var(--color-light); border: none;font-size: 14px; font-weight: 600;">Remover produto</button>
+                </ul>
+            </div>
+        </div>
+    </div>

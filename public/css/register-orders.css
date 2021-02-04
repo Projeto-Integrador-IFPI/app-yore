@@ -1,0 +1,109 @@
+.form-area {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 32px;
+}
+
+.form-area--inputs .input-area {
+    margin-top: 14px;
+}
+
+.form-area--inputs .input-area .label {
+    color: var(--color-light);
+    font-weight: 600;
+}
+
+.form-area--inputs .input-area .textarea {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--color-black);
+    color: var(--color-light);
+    font-family: var(--poppins);
+    transition: 0.2s;
+}
+
+.form-area--inputs .input-area .input {
+    padding: 22px 14px;
+    border-radius: 10px;
+    border: none;
+    background: var(--color-black);
+    color: var(--color-light);
+    font-family: var(--poppins);
+    transition: 0.2s;
+}
+
+.form-area--inputs .input-area .input:focus {
+    background: #1b1b2e;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-group {
+    width: 100%;
+    display: flex;
+    grid-gap: 32px;
+}
+
+.btn-group .btn-done {
+    background-color: var(--color-green);
+    color: var(--color-light);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-group .btn-clear {
+    background-color: var(--color-red);
+    color: var(--color-light);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fieldset {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: var(--color-blacked);
+    transition: all .3s;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .1);
+}
+
+.fieldset:hover {
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .3);
+}
+
+.fieldset legend {
+    margin-bottom: -10px;
+    color: var(--color-light);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.fieldset .btn-incluir {
+    display: inline-flex;
+    align-items: center;
+    grid-gap: 10px;
+    margin: 10px 0px 2px 6px;
+    padding: 8px 16px;
+    background-color: var(--color-green);
+    color: var(--color-light);
+}
+
+.fieldset .btn-incluir i {
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+
+.fieldset .btn-incluir span {
+    padding-right: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,205 @@
+.content {
+    padding: var(--font-48px);
+}
+
+.padding {
+    width: 100%;
+    padding: 100px 170px 70px 170px;
+}
+
+.sign-header--cover .logo img {
+    width: 130px;
+}
+
+.sign-header--cover .legends .title {
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.sign-header--cover .legends .subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--color-gray);
+}
+
+.sign-cover {
+    height: 100vh;
+}
+
+.backdrop-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 48px;
+}
+
+.backdrop-img img {
+    width: 500px;
+}
+
+.sign-form {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-form .sign-social--media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.sign-form .sign-social--media .btn-facebook {
+    display: flex;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: #0B84ED;
+    color: var(--color-light);
+    text-align: center;
+}
+
+.sign-form .sign-social--media .btn-facebook:hover {
+    background: #0a70c9;
+}
+
+.sign-form .sign-social--media .btn-facebook i {
+    font-size: 20px;
+}
+
+.sign-form .sign-social--media p {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sign-form .input-area {
+    margin-top: 14px;
+    letter-spacing: 1px;
+}
+
+.sign-form .input-area .label {
+    font-size: 15px;
+    color: var(--color-light);
+    font-weight: 500;
+}
+
+.sign-form .input-area .input {
+    width: 100% !important;
+    height: auto !important;
+    padding: 10px var(--font-16px);
+    border-radius: 10px;
+    border: none;
+    background: var(--color-blacked);
+    color: var(--color-light);
+    font-family: var(--poppins);
+    transition: 0.2s;
+}
+
+.sign-form .input-area .input:focus {
+    background: var(--color-blacked);
+    outline: none;
+    border: none;
+    transition: 0.2s;
+}
+
+.divider-or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider-or span {
+    width: 100%;
+    height: 1px;
+    background: var(--color-blacked);
+}
+
+.divider-or p {
+    padding: 0 var(--font-16px);
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--font-16px);
+    color: var(--color-light);
+}
+
+.divider {
+    margin: 16px 0;
+    width: 100%;
+    height: 1px;
+    background: var(--color-blacked);
+}
+
+.content .form .form-forgot--pass a {
+    text-decoration: none;
+    color: var(--color-blue);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.content .form .form-check--btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .form .form-check--btn .btn-login {
+    padding: 10px 26px;
+    background-color: var(--color-green);
+    color: var(--color-light);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.content .form .form-check--btn .btn-login:hover {
+    background-color: #019c69;
+}
+
+.form-row .btn-registro {
+    padding: 10px 26px !important;
+    background-color: var(--color-green);
+    color: var(--color-light);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.form-row .btn-registro:hover {
+    background-color: #019c69;
+}
+
+.sign-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.sign-link p {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sign-link .btn-sign--link {
+    padding: 10px 26px;
+    background-color: var(--color-purple);
+    color: var(--color-light);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.sign-link .btn-sign--link:hover {
+    background-color: #6300cc;
+}

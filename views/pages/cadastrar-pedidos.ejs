@@ -1,0 +1,106 @@
+<%- contentFor('main') %>
+    <div class="pt-2">
+        <h2 class="sec-title">Cadastro de pedidos</h2>
+    </div>
+    <div class="form-area mt-3">
+        <form class="form-area--inputs">
+            <fieldset class="fieldset border-radius">
+                <legend>Informações e endereço do cliente</legend>
+                <div class="form-row">
+                    <div class="col-md-5 input-area">
+                        <label for="destinatario" class="form-label label">Destinatário</label>
+                        <input type="text" class="input form-control" placeholder="Ex: André Gomes" id="destinatario">
+                    </div>
+                    <div class="col-md-2 input-area">
+                        <label for="ddd" class="form-label label">DDD</label>
+                        <input type="text" class="input form-control" placeholder="(XX)" id="ddd">
+                    </div>
+                    <div class="col-md-5 input-area">
+                        <label for="telefone" class="form-label label">Telefone do destinatário</label>
+                        <input type="text" class="input form-control" placeholder="Ex: XXXXX-XXXX" id="telefone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 input-area">
+                        <label for="logradouro" class="form-label label">Logradouro</label>
+                        <input type="text" class="input form-control" placeholder="Ex: 145, Rua dos Anjos" id="logradouro">
+                    </div>
+                    <div class="col-md-3 input-area">
+                        <label for="telefone" class="form-label label">Número</label>
+                        <input type="text" class="input form-control" placeholder="Ex: 2145" id="numero">
+                    </div>
+                    <div class="col-md-5 input-area">
+                        <label for="bairro" class="form-label label">Bairro</label>
+                        <input type="text" class="input form-control" placeholder="Ex: Escalvado" id="bairro">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 input-area">
+                        <label for="complemento" class="form-label label">Complemento</label>
+                        <input type="text" class="input form-control" placeholder="Ex: Proximo ao banco do Bradesco" id="complemento">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="fieldset border-radius">
+                <legend>Informações extras</legend>
+                <div class="form-row">
+                    <div class="col-md-6 input-area">
+                        <label for="entregador" class="form-label label">Nome do entregador</label>
+                        <input type="text" class="input form-control" id="entregador" placeholder="Ex: Luiz Castro">
+                    </div>
+                    <div class="col-md-6 input-area">
+                        <label for="data-pedido" class="form-label label">Data do pedido</label>
+                        <input type="date" class="input form-control" id="data-pedido">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 input-area">
+                        <label for="observacoes" class="form-label label">Observações do pedido</label>
+                        <textarea type="text" class="textarea form-control" id="observacoes"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-row">
+                <div class="col-12 btn-group mt-4">
+                    <button class="btn btn-done border-radius p-2">Cadastrar pedido</button>
+                    <button class="btn btn-clear border-radius p-2">Limpar campos</button>
+                </div>
+            </div>
+        </form>
+        <div class="card blacked border-radius">
+            <div class="card-header blue semi-radius">
+                <p class="title">Pedidos cadastrados</p>
+            </div>
+            <div class="card-body">
+                <ul class="historic-requests">
+                    <li class="historic-request-item">
+                        <p class="item-name">Dados do destinatário:</p>
+                        <ul class="item-info task-info">
+                            <div class="d-grid">
+                                <li>Cliente: John Doe</li>
+                                <li>Contato: (86) 999438-5343</li>
+                                <li>Endereço: Av. Alguma Coisa</li>
+                                <li>Número: 455</li>
+                                <li>Complemento: Rua prox. AABB</li>
+                            </div>
+                        </ul>
+                        <p class="item-name mt-2">Informações extras:</p>
+                        <ul class="item-info task-info">
+                            <div class="d-grid">
+                                <li>Entregador: Luiz Castro</li>
+                                <li>Data do pedido: 10/01/2021</li>
+                                <li>
+                                    <span style="font-weight: 600;">Observações:</span> Pagamento no cartão no momento da entrega
+                                </li>
+                            </div>
+                            <div class="item mt-2">
+                                <a href="/itens-pedidos" class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-green); color: var(--color-light); border: none;font-size: 14px; font-weight: 600; text-decoration: none;">Adicionar produtos</a>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

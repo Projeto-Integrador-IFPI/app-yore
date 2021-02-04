@@ -1,0 +1,48 @@
+<nav class="navbar blacked">
+    <div class="navbar-brand">
+        <a href="/" class="logo"><img src="/img/YORE.svg" alt=""></a>
+        <div class="divider"></div>
+        <div class="navbar-toggle" onclick="toggleON()">
+            <span>Menu</span>
+            <div class="toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="menu-options">
+            <form class="form" action="">
+                <input class="input form-control" type="text" placeholder="Pesquisar...">
+                <a class="btn btn-search" href="#"><i class='bx bx-search'></i></a>
+            </form>
+            <div class="options">
+                <a class="btn btn-cog black" href="#"><i class='bx bx-cog'></i></a>
+                <% if(locals.user) { %>
+                    <a class="btn btn-user black" href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="username">
+                            <%= user.username %></a>
+                        <% } else { %>
+                            <a href="/" class="btn-login border-radius">Entrar</a>
+                    </span>
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+        <div id="openSidenav" class="sidenav">
+            <a href="javascript:void(0)" class="btn-close" onclick="toggleOFF()">
+                <span>Fechar</span>
+                <i class='bx bx-plus'></i>
+            </a>
+            <div class="menu-toggler">
+                <a href="/home"><i class='bx bx-home'></i>Início</a>
+                <a href="/cadastrar-pedidos"><i class='bx bx-package'></i>Cadastrar Pedidos</a>
+                <a href="/area-pedidos"><i class='bx bx-cart-alt'></i>Área dos Pedidos</a>
+                <a href="#"><i class='bx bx-cog'></i>Configurações</a>
+                <a href="/"><i class='bx bx-log-out-circle'></i>Sair</a>
+            </div>
+        </div>
+    </div>
+</nav>

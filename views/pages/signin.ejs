@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Conecte-se no YORE</title>
+</head>
+
+<body id="app">
+    <main id="main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="sign-cover col-md-5">
+                    <div class="content">
+                        <div class="sign-header--cover">
+                            <div class="logo">
+                                <img src="/img/YORE.svg" class="pb-4" alt="Logo do YORE">
+                            </div>
+                            <div class="legends mt-3">
+                                <h3 class="title mb-3">Bem-vindo à sua plataforma de controle de pedidos.</h3>
+                                <p class="subtitle">Organize de forma simples todos os pedidos do seu negócio.</p>
+                            </div>
+                        </div>
+                        <div class="backdrop-img mt-2">
+                            <img src="/img/login-cover.svg" style="max-width: 400px;" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-form col-md-7 black">
+                    <div class="content padding">
+                        <form action="/login" method="POST" class="form">
+                            <div class="sign-social--media mb-4">
+                                <p class="mb-3">Para continuar, faça login no YORE.</p>
+                                <a href="#" class="btn btn-facebook border-radius"><i class='bx bxl-facebook'></i>Continuar com o Facebook</a>
+                            </div>
+                            <div class="divider-or">
+                                <span></span>
+                                <p>ou</p>
+                                <span></span>
+                            </div>
+                            <div class="mb-1 input-area">
+                                <label for="username" class="form-label label mt-0">Email ou nome de usuário</label>
+                                <input type="text" class="input form-control" name="username" id="username" required>
+                                <small id="erro-username" style="font-weight: 600; color: var(--color-red);"></small>
+                            </div>
+                            <div class="mb-1 input-area">
+                                <label for="senha" class="form-label label mt-2">Senha</label>
+                                <input type="password" class="input form-control" name="senha" id="senha" required>
+                                <small id="erro-password" style="font-weight: 600; color: var(--color-red);"></small>
+                            </div>
+                            <div class="form-forgot--pass mb-3">
+                                <a href="/reset">Esqueceu sua senha?</a>
+                            </div>
+                            <div class="form-check--btn">
+                                <!-- <div class="mb-3 form-check input-area">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label label" for="rememberMe">Lembrar de mim</label>
+                                </div> -->
+                                <button type="submit" class="btn btn-login border-radius col-6" onclick="verify()">Entrar</button>
+                            </div>
+                            <div class="divider">
+                                <span></span>
+                            </div>
+                            <div class="sign-link">
+                                <p class="mb-2">Não possui uma conta ainda?</p>
+                                <a href="/signup" class="btn btn-sign--link border-radius">Inscrever-se no YORE</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer blacked">
+        <p>Copyright &copy2021 Alguns direitos reservados | <span>YORE</span></p>
+    </footer>
+</body>
+
+<script src="/js/verifyInputs.js"></script>
+
+</html>

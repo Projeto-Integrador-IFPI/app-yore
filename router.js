@@ -1,26 +1,21 @@
 const express = require('express')
 const router = express.Router()
-const mainController = require('./controllers/mainController')
+const userController = require('./controllers/userController')
+const pedidoController = require('./controllers/pedidoController')
 
 // rotas
-router.get('/', mainController.signin)
-router.post('/login', mainController.login)
+router.get('/', userController.signin)
+router.post('/login', userController.login)
+router.get('/logout', userController.logout)
+router.get('/signup', userController.signup)
+router.post('/register', userController.save)
+router.get('/reset', userController.reset)
+router.get('/home', userController.home)
 
-router.get('/signup', mainController.signup)
-router.post('/register', mainController.save)
-
-router.get('/reset', mainController.reset)
-
-router.get('/home', mainController.home)
-
-router.get('/cadastrar-pedidos', mainController.cadastrar_pedidos)
-
-router.get('/pedido/:id', mainController.pedido)
-
-router.get('/itens-pedidos', mainController.itens_pedidos)
-
-router.get('/area-pedidos', mainController.area_pedidos)
-
-// router.get('/signin', mainController.signin)
+router.get('/cadastrar-pedidos', pedidoController.cadastrar_pedidos)
+router.post('/cadastrar-pedidos', pedidoController.save)
+router.get('/pedido/:id', pedidoController.pedido)
+router.get('/itens-pedidos', pedidoController.itens_pedidos)
+router.get('/area-pedidos', pedidoController.area_pedidos)
 
 module.exports = router

@@ -1,8 +1,14 @@
-const express = require('express');
+const pool = require("./db")
+const express = require('express')
 const session = require('express-session')
-const app = express();
+const pgSession = require('connect-pg-simple')(session)
+const app = express()
 
 let sessionOptions = session({
+    store: new pgSession({
+        pool: pool,
+        tableName: 'user_session'
+    }),
     secret: "minha_chave_secret",
     resave: false,
     saveUninitialized: false,
@@ -11,10 +17,17 @@ let sessionOptions = session({
         httpOnly: true
     }
 })
+
 app.use(sessionOptions)
+
+app.use(function(req, res, next) {
+    res.locals.user = req.session.user
+    next()
+})
 
 const expressEjsLayouts = require('express-ejs-layouts');
 const router = require('./router');
+const { Session } = require('express-session');
 
 app.use(express.static("public"));
 app.set("views", "views");

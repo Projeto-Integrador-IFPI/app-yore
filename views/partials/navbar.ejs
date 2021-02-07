@@ -19,11 +19,12 @@
             </form>
             <div class="options">
                 <a class="btn btn-cog black" href="#"><i class='bx bx-cog'></i></a>
-                <% if(locals.user) { %>
+                <% if(user) { %>
                     <a class="btn btn-user black" href="#">
                         <i class='bx bx-user'></i>
                         <span class="username">
                             <%= user.username %></a>
+                            <a href="/logout" class="btn btn-logout border-radius"><i class='bx bx-log-out-circle' ></i> Sair</a>
                         <% } else { %>
                             <a href="/" class="btn-login border-radius">Entrar</a>
                     </span>
@@ -41,7 +42,9 @@
                 <a href="/cadastrar-pedidos"><i class='bx bx-package'></i>Cadastrar Pedidos</a>
                 <a href="/area-pedidos"><i class='bx bx-cart-alt'></i>Área dos Pedidos</a>
                 <a href="#"><i class='bx bx-cog'></i>Configurações</a>
-                <a href="/"><i class='bx bx-log-out-circle'></i>Sair</a>
+                <% if(user) { %>
+                    <a href="/logout"><i class='bx bx-log-out-circle'></i>Sair</a>
+                    <% } %>
             </div>
         </div>
     </div>

@@ -53,29 +53,32 @@
         <div class="col">
             <div class="card blacked border-radius">
                 <div class="card-header blue semi-radius">
-                    <p class="title">Total de pedidos cadastrados</p>
+                    <p class="title">Ultimos pedidos cadastrados</p>
                 </div>
                 <div class="card-body">
-                    <ul class="requests border-radius">
-                        <li class="request-item">
-                            <p class="item-name">John Doe, Av. Alguma Coisa - 455</p>
-                            <ul class="item-info">
-                                <p>Itens do pedido:</p>
-                                <li>Item 1,</li>
-                                <li>Item 2,</li>
-                                <li>Item 3</li>
-                            </ul>
-                            <div class="item-option">
-                                <div class="item-price">
-                                    <p class="price">Valor do Pedido: R$ 55,00</p>
+                    <% ultimosPedidos.forEach(pedido => { %>
+                        <ul class="requests border-radius">
+                            <li class="request-item">
+                                <p class="item-name"><%= pedido.nome_destinatario %> , <%= pedido.logradouro %> - <%= pedido.numero_logradouro %></p>
+                                <ul class="item-info">
+                                    <p>Itens do pedido:</p>
+                                    <li>Item 1,</li>
+                                    <li>Item 2,</li>
+                                    <li>Item 3</li>
+                                </ul>
+                                <div class="item-option">
+                                    <div class="item-price">
+                                        <p class="price">Valor do Pedido: R$ 55,00</p>
+                                    </div>
+                                    <div class="options">
+                                        <a class="btn btn-edit green border-radius" href="#"><i class='bx bx-edit'></i></a>
+                                        <a class="btn btn-trash red border-radius" href="#"><i class='bx bx-trash'></i></a>
+                                    </div>
                                 </div>
-                                <div class="options">
-                                    <a class="btn btn-edit green border-radius" href="#"><i class='bx bx-edit'></i></a>
-                                    <a class="btn btn-trash red border-radius" href="#"><i class='bx bx-trash'></i></a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                            
+                        </ul>
+                    <% }); %>
                 </div>
             </div>
         </div>

@@ -3,21 +3,18 @@
         <h2 class="sec-title">Cadastro de pedidos</h2>
     </div>
     <div class="form-area mt-3">
-        <form class="form-area--inputs">
+        <form class="form-area--inputs" method="POST" action="/cadastrar-pedidos">
             <fieldset class="fieldset border-radius">
                 <legend>Informações e endereço do cliente</legend>
                 <div class="form-row">
                     <div class="col-md-5 input-area">
                         <label for="destinatario" class="form-label label">Destinatário</label>
-                        <input type="text" class="input form-control" placeholder="Ex: André Gomes" id="destinatario">
+                        <input name="nome_destinatario" type="text" class="input form-control" placeholder="Ex: André Gomes" id="destinatario">
                     </div>
-                    <div class="col-md-2 input-area">
-                        <label for="ddd" class="form-label label">DDD</label>
-                        <input type="text" class="input form-control" placeholder="(XX)" id="ddd">
-                    </div>
+    
                     <div class="col-md-5 input-area">
                         <label for="telefone" class="form-label label">Telefone do destinatário</label>
-                        <input type="text" class="input form-control" placeholder="Ex: XXXXX-XXXX" id="telefone">
+                        <input name="telefone_destinatario"type="text" class="input form-control" placeholder="Ex: XXXXX-XXXX" id="telefone">
                     </div>
                 </div>
                 <div class="form-row">
@@ -47,17 +44,17 @@
                 <div class="form-row">
                     <div class="col-md-6 input-area">
                         <label for="entregador" class="form-label label">Nome do entregador</label>
-                        <input type="text" class="input form-control" id="entregador" placeholder="Ex: Luiz Castro">
+                        <input name="nome_entregador" type="text" class="input form-control" id="entregador" placeholder="Ex: Luiz Castro">
                     </div>
                     <div class="col-md-6 input-area">
                         <label for="data-pedido" class="form-label label">Data do pedido</label>
-                        <input type="date" class="input form-control" id="data-pedido">
+                        <input name="data_pedido" type="date" class="input form-control" id="data-pedido">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-12 input-area">
                         <label for="observacoes" class="form-label label">Observações do pedido</label>
-                        <textarea type="text" class="textarea form-control" id="observacoes"></textarea>
+                        <input name="observacoes" type="text" class="textarea form-control" id="observacoes"></input>
                     </div>
                 </div>
             </fieldset>

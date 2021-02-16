@@ -1,6 +1,6 @@
 const pool = require("../db");
 
-let Pedido = function(data, username, endereco) {
+const Pedido = function(data, username, endereco) {
     this.data = data
     this.errors = []
     this.username = username
@@ -8,11 +8,12 @@ let Pedido = function(data, username, endereco) {
 }
 
 Pedido.prototype.create = function() {
-    const query = 'INSERT INTO pedidos(nome_destinatario, telefone_destinatario, observacoes, data_pedido, nome_entregador) values($1, $2, $3, $4, $5)';
+    const query = 'INSERT INTO pedidos(nome_destinatario, telefone_destinatario, observacoes, data_pedido, nome_entregador, status_pedido) values($1, $2, $3, $4, $5, 0)';
     const values = [this.data.nome_destinatario, this.data.telefone_destinatario, this.data.observacoes, this.data.data_pedido, this.data.nome_entregador];
     return new Promise((resolve, reject) => {
         pool.query(query, values, (error, results) => {
             if (error) {
+                console.log(error);
                 reject("Pedido não inserido");
             } else {
                 resolve("Pedido inserido com sucesso!");

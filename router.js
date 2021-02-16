@@ -14,7 +14,7 @@ router.get('/signup', userController.signup)
 router.post('/register', userController.save)
 router.get('/reset', userController.reset)
 
-router.get('/cadastrar-pedidos', pedidoController.cadastrar_pedidos)
+router.get('/cadastrar-pedidos', authRedirect, pedidoController.cadastrar_pedidos)
 router.post('/cadastrar-pedidos', pedidoController.save)
 router.get('/pedido/:id', pedidoController.pedido)
 router.get('/itens-pedidos', pedidoController.itens_pedidos)

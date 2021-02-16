@@ -4,6 +4,8 @@ const session = require('express-session')
 const pgSession = require('connect-pg-simple')(session)
 const app = express()
 
+app.use(express.static("public"));
+
 let sessionOptions = session({
     store: new pgSession({
         pool: pool,
@@ -29,7 +31,6 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const router = require('./router');
 const { Session } = require('express-session');
 
-app.use(express.static("public"));
 app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(expressEjsLayouts);

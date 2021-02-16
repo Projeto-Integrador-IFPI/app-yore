@@ -18,6 +18,7 @@ exports.home = async function(req, res) {
       }
   }
 
-  console.log(totais);
-  res.render('pages/home', { totais })
+  const ultimosPedidos = await pedido.findLatest();
+  
+  res.render('pages/home', { totais, ultimosPedidos })
 }

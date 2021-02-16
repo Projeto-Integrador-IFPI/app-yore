@@ -32,11 +32,12 @@ exports.save = function(req, res) {
     pedido
         .create()
         .then(function(result) {
-            res.render('pages/home');
+            res.redirect('/home');
         })
         .catch(function(err) {
+            console.log(err);
             res.send(err);
-        });
+        });   
 }
 
 exports.pedido = function(req, res) {

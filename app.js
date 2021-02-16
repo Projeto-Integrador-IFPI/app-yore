@@ -11,7 +11,7 @@ let sessionOptions = session({
         pool: pool,
         tableName: 'user_session'
     }),
-    secret: "minha_chave_secret",
+    secret: process.env.APP_SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

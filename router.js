@@ -2,15 +2,17 @@ const express = require('express')
 const router = express.Router()
 const userController = require('./controllers/userController')
 const pedidoController = require('./controllers/pedidoController')
+const dashboardController = require('./controllers/dashboardController')
 
 // rotas
+router.get('/home', dashboardController.home)
+
 router.get('/', userController.signin)
 router.post('/login', userController.login)
 router.get('/logout', userController.logout)
 router.get('/signup', userController.signup)
 router.post('/register', userController.save)
 router.get('/reset', userController.reset)
-router.get('/home', userController.home)
 
 router.get('/cadastrar-pedidos', pedidoController.cadastrar_pedidos)
 router.post('/cadastrar-pedidos', pedidoController.save)

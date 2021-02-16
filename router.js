@@ -3,9 +3,9 @@ const router = express.Router()
 const userController = require('./controllers/userController')
 const pedidoController = require('./controllers/pedidoController')
 const dashboardController = require('./controllers/dashboardController')
-
+const { authRedirect } = require('./middleware/authRedirect')
 // rotas
-router.get('/home', dashboardController.home)
+router.get('/home', authRedirect, dashboardController.home)
 
 router.get('/', userController.signin)
 router.post('/login', userController.login)

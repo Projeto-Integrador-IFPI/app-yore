@@ -1,11 +1,6 @@
 const Pedido = require('../models/Pedido')
 
 exports.home = async function(req, res) {
-  if (!req.session.user) {
-    res.redirect('/');
-    return;
-  }
-
   const pedido = new Pedido();
 
   const totais = {

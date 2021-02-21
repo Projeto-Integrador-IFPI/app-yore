@@ -46,4 +46,16 @@ Pedido.prototype.findLatest = async function() {
         .catch(e => console.error(e.stack))
 }
 
+
+Pedido.prototype.delete = async function(id) {
+    const query = 'delete from pedidos where id_pedido = $1'
+    const values = [id];
+
+    return pool
+        .query(query, values)
+        .then(res => res)
+        .catch(e => console.error(e.stack))   
+} 
+
+
 module.exports = Pedido;

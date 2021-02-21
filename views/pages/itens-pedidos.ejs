@@ -1,6 +1,6 @@
 <%- contentFor('main') %>
     <div class="pt-2">
-        <h2 class="sec-title">Cadastrar itens do pedido</h2>
+        <h2 class="sec-title">Pedido <%= id %> - Cadastrar itens do pedido</h2>
     </div>
     <div class="form-area mt-3">
         <form class="form-area--inputs">
@@ -36,15 +36,17 @@
                 <p class="title">Itens do pedido</p>
             </div>
             <div class="card-body">
-                <ul class="historic-requests">
-                    <li class="historic-request-item">
-                        <p class="item-name">Produto: Açucar Mascavo - 2 Unidades</p>
-                        <ul class="item-info task-info">
-                            <p class="item-price">Valor do Produto: R$ 55,00</p>
-                        </ul>
-                    </li>
-                    <button class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-red); color: var(--color-light); border: none;font-size: 14px; font-weight: 600;">Remover produto</button>
-                </ul>
+                <% itensDoPedido.forEach(item => { %>
+                    <ul class="historic-requests">
+                        <li class="historic-request-item">
+                            <p class="item-name"> <%= item.nome_item%> </p>
+                            <ul class="item-info task-info">
+                                <p class="item-price">Valor do Produto: R$ <%= item.preco_item%></p>
+                            </ul>
+                        </li>
+                        <button class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-red); color: var(--color-light); border: none;font-size: 14px; font-weight: 600;">Remover produto</button>
+                    </ul>
+                <% }); %>
             </div>
         </div>
     </div>

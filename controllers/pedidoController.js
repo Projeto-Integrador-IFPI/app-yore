@@ -1,3 +1,4 @@
+const ItemPedido = require('../models/ItemPedido')
 const Pedido = require('../models/Pedido')
 
 // exports.home = async function(req, res) {
@@ -40,9 +41,16 @@ exports.save = function(req, res) {
         });   
 }
 
-exports.pedido = function(req, res) {
+exports.pedido = async function(req, res) {
     const { id } = req.params;
-    res.render('pages/itens-pedidos', { id })
+    const itemPedido = new ItemPedido()
+    const itens =  await itemPedido.find(id) || []
+
+    let itensDoPedido = [] 
+    if (itens) {
+        itensDoPedido = itens
+    }
+    res.render('pages/itens-pedidos', { id, itensDoPedido })
 }
 
 exports.itens_pedidos = function(req, res) {
@@ -52,3 +60,17 @@ exports.itens_pedidos = function(req, res) {
 exports.area_pedidos = function(req, res) {
     res.render('pages/area-pedidos')
 }
+
+exports.deletar = function(req, res) {
+    let pedido = new Pedido()
+    pedido
+        .delete(req.params.id)
+        .then(function(result) {
+            res.redirect('/home');
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.send(err);
+        });   
+}
+

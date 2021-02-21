@@ -17,6 +17,7 @@ router.get('/reset', userController.reset)
 router.get('/cadastrar-pedidos', authRedirect, pedidoController.cadastrar_pedidos)
 router.post('/cadastrar-pedidos', pedidoController.save)
 router.get('/pedido/:id', pedidoController.pedido)
+router.get('/pedido-deletar/:id', pedidoController.deletar)
 router.get('/itens-pedidos', pedidoController.itens_pedidos)
 router.get('/area-pedidos', pedidoController.area_pedidos)
 

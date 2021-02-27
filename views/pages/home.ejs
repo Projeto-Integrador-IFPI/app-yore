@@ -62,14 +62,28 @@
                                 <p class="item-name">
                                     <%= pedido.nome_destinatario %> ,
                                         <%= pedido.logradouro %> -
-                                            <%= pedido.numero_logradouro %>
+                                            <%= pedido.numero_logradouro %> -
+                                                <span style="color: gainsboro; font-weight: 600;"> Status: <%= pedido.status_pedido %></span>
                                 </p>
+                                <div class="item-info mb-2">
+                                    <p>Complemento: </p>
+                                    <%= pedido.complemento %>
+                                </div>
+                                <div class="item-info mb-2">
+                                    <p>Entregador(a): </p>
+                                    <%= pedido.nome_entregador %>
+                                </div>
                                 <ul class="item-info">
                                     <p>Itens do pedido:</p>
                                     <li>Item 1,</li>
                                     <li>Item 2,</li>
                                     <li>Item 3</li>
                                 </ul>
+                                <div class="item-info">
+                                    <p>Observações: </p>
+                                    <%= pedido.observacoes %>
+                                </div>
+
                                 <div class="item-option">
                                     <div class="item-price">
                                         <p class="price">Valor do Pedido: R$ 55,00</p>

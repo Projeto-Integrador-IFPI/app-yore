@@ -87,7 +87,8 @@
 }
 
 .requests .request-item .item-name {
-    font-size: 14px;
+    margin-bottom: 8px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-green);
 }
@@ -95,7 +96,7 @@
 .requests .request-item .item-info {
     display: flex;
     flex-wrap: wrap;
-    max-width: 960px;
+    max-width: 830px;
 }
 
 .item-info .item-text {
@@ -108,10 +109,12 @@
 .requests .request-item .item-info p {
     font-weight: 500;
     margin-right: 8px;
+    font-size: 15px;
 }
 
 .requests .request-item .item-info li {
     margin-right: 4px;
+    font-size: 15px;
 }
 
 .requests .request-item .item-option {

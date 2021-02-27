@@ -7,22 +7,20 @@ const ItemPedido = function(data, username, endereco) {
     this.endereco = endereco
 }
 
-ItemPedido.prototype.create = function() {
-    const query = 'INSERT INTO ItemPedidos(nome_destinatario, telefone_destinatario, observacoes, data_ItemPedido, nome_entregador, status_ItemPedido, logradouro, numero_logradouro, bairro, complemento ) values($1, $2, $3, $4, $5, 0, $6, $7, $8, $9)';
-    const values = [this.data.nome_destinatario, this.data.telefone_destinatario, this.data.observacoes, this.data.data_ItemPedido, this.data.nome_entregador, this.data.logradouro, this.data.numero_logradouro, this.data.bairro, this.data.complemento];
-    return new Promise((resolve, reject) => {
-        pool.query(query, values, (error, results) => {
-            if (error) {
-                console.log(error);
-                reject("ItemPedido não inserido");
-            } else {
-                resolve("ItemPedido inserido com sucesso!");
-            }
-        });
-    });
+ItemPedido.prototype.create = async function () {
+    const query = 'INSERT INTO itens_pedido (nome_item, quantidade_item, preco_item, id_pedido) values($1, $2, $3, $4) RETURNING id_item_pedido';
+    const values = [this.data.nome_item, this.data.quantidade_item, this.data.preco_item, this.data.id_pedido];
+
+    return pool
+        .query(query, values)
+        .then(res => {
+            console.log('Item do Pedido Cadastrado')
+            return res.rows[0].id_item_pedido
+        })
+        .catch(e => console.error(e.stack))    
 };
 
-ItemPedido.prototype.countTotal = async function({ status } = {}) {
+ItemPedido.prototype.countTotal = async function ({ status } = {}) {
     let query;
     let values;
     if (status) {

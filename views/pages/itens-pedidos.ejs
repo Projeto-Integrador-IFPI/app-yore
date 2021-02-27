@@ -1,27 +1,27 @@
 <%- contentFor('main') %>
     <div class="pt-2">
-        <h2 class="sec-title">Pedido <%= id %> - Cadastrar itens do pedido</h2>
+        <h2 class="sec-title">Pedido <%= id_pedido %> - Cadastrar itens do pedido</h2>
     </div>
-    <div class="form-area mt-3">
-        <form class="form-area--inputs">
+    <div class="form-area-item mt-3">
+        <form id="form-item-pedido" class="form-area--inputs" method="POST" action="/pedido/<%=id_pedido%>/cadastrar-item">
             <fieldset class="fieldset border-radius">
                 <legend>Itens do pedido</legend>
                 <div class="form-row">
                     <div class="col-md-4 input-area">
                         <label for="" class="form-label label">Nome do produto</label>
-                        <input type="text" class="input form-control" id="">
+                        <input name="nome_item" type="text" class="input form-control" id="">
                     </div>
                     <div class="col-md-4 input-area">
                         <label for="" class="form-label label">Quantidade</label>
-                        <input type="number" class="input form-control" id="">
+                        <input name="quantidade_item" type="number" class="input form-control" id="">
                     </div>
                     <div class="col-md-4 input-area">
                         <label for="" class="form-label label">Preço do produto</label>
-                        <input type="text" class="input form-control" id="">
+                        <input name="preco_item" type="number" step=".01" class="input form-control" id="">
                     </div>
-                    <button class="btn btn-incluir border-radius">
-                    <i class='bx bx-plus'></i><span>Incluir produto</span>
-                </button>
+                    <button type="submit" form="form-item-pedido" class="btn btn-incluir border-radius">
+                        <i class='bx bx-plus'></i><span>Incluir produto</span>
+                    </button>
                 </div>
             </fieldset>
             <div class="form-row">
@@ -41,7 +41,9 @@
                         <li class="historic-request-item">
                             <p class="item-name"> <%= item.nome_item%> </p>
                             <ul class="item-info task-info">
-                                <p class="item-price">Valor do Produto: R$ <%= item.preco_item%></p>
+                                <p class="item-price">Quantidade: R$ <%= item.quantidade_item%></p>
+                                <p class="item-price">Valor do item: R$ <%= item.preco_item%></p>
+                                <p class="item-price">Valor total do item: R$ <%= item.preco_item * item.quantidade_item %></p>
                             </ul>
                         </li>
                         <button class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-red); color: var(--color-light); border: none;font-size: 14px; font-weight: 600;">Remover produto</button>

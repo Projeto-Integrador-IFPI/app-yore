@@ -14,10 +14,15 @@ router.get('/signup', userController.signup)
 router.post('/register', userController.save)
 router.get('/reset', userController.reset)
 
+//PEDIDO
 router.get('/cadastrar-pedidos', authRedirect, pedidoController.cadastrar_pedidos)
 router.post('/cadastrar-pedidos', pedidoController.save)
-router.get('/pedido/:id', pedidoController.pedido)
 router.get('/pedido-deletar/:id', pedidoController.deletar)
+
+//ITEM PEDIDO
+router.get('/pedido/:id_pedido/cadastrar-item', pedidoController.pedido)
+router.post('/pedido/:id_pedido/cadastrar-item', pedidoController.saveItemPedido)
+
 router.get('/itens-pedidos', pedidoController.itens_pedidos)
 router.get('/area-pedidos', pedidoController.area_pedidos)
 

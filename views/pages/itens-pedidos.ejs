@@ -1,6 +1,7 @@
 <%- contentFor('main') %>
     <div class="pt-2">
-        <h2 class="sec-title">Pedido <%= id_pedido %> - Cadastrar itens do pedido</h2>
+        <h2 class="sec-title">Pedido
+            <%= id_pedido %> - Cadastrar itens do pedido</h2>
     </div>
     <div class="form-area-item mt-3">
         <form id="form-item-pedido" class="form-area--inputs" method="POST" action="/pedido/<%=id_pedido%>/cadastrar-item">
@@ -39,16 +40,27 @@
                 <% itensDoPedido.forEach(item => { %>
                     <ul class="historic-requests">
                         <li class="historic-request-item">
-                            <p class="item-name"> <%= item.nome_item%> </p>
+                            <p class="item-name">
+                                <%= item.nome_item%>
+                            </p>
                             <ul class="item-info task-info">
-                                <p class="item-price">Quantidade: R$ <%= item.quantidade_item%></p>
-                                <p class="item-price">Valor do item: R$ <%= item.preco_item%></p>
-                                <p class="item-price">Valor total do item: R$ <%= item.preco_item * item.quantidade_item %></p>
+                                <p class="item-text">Quantidade: R$
+                                    <%= item.quantidade_item%>
+                                </p>
+                                <p class="item-text">Valor do item: R$
+                                    <%= item.preco_item%>
+                                </p>
+                                <p class="item-text">Valor total do item: R$
+                                    <%= item.preco_item * item.quantidade_item %>
+                                </p>
                             </ul>
                         </li>
-                        <button class="border-radius" style="margin-top: 8px; padding: 8px 16px; background-color: var(--color-red); color: var(--color-light); border: none;font-size: 14px; font-weight: 600;">Remover produto</button>
+                        <button class="btn-remove--item border-radius">Remover produto</button>
                     </ul>
-                <% }); %>
+                    <% }); %>
+            </div>
+            <div class="card-footer smooth border-radius">
+                <p>Valor total do pedido: R$ <span>30,00</span></p>
             </div>
         </div>
     </div>

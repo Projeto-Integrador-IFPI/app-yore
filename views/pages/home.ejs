@@ -14,7 +14,7 @@
                     <div class="divider"></div>
                     <h5>No ultimo mês</h5>
                     <p class="card-text">
-                        <%= totais.cadastrados.mes %> pedidos cadastrados no último mês</p>
+                        <%= totais.cadastrados.mes %> pedidos cadastrados nos últimos 30 dias</p>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     <div class="divider"></div>
                     <h5>No ultimo mês</h5>
                     <p class="card-text">
-                        <%= totais.entregues.mes %> pedidos entregues no último mês</p>
+                        <%= totais.entregues.mes %> pedidos entregues nos últimos 30 dias</p>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                     <div class="divider"></div>
                     <h5>No ultimo mês</h5>
                     <p class="card-text">
-                        <%= totais.naoEntregues.mes %> pedidos entregues no último mês</p>
+                        <%= totais.naoEntregues.mes %> pedidos entregues nos últimos 30 dias</p>
                 </div>
             </div>
         </div>
@@ -65,20 +65,16 @@
                                             <%= pedido.numero_logradouro %> -
                                                 <span style="color: gainsboro; font-weight: 600;"> Status: <%= pedido.status_pedido %></span>
                                 </p>
-                                <div class="item-info mb-2">
-                                    <p>Complemento: </p>
-                                    <%= pedido.complemento %>
-                                </div>
+                                <% if (pedido.complemento) { %>
+                                    <div class="item-info mb-2">
+                                        <p>Complemento: </p>
+                                        <%= pedido.complemento %>
+                                    </div>
+                                <% } %>
                                 <div class="item-info mb-2">
                                     <p>Entregador(a): </p>
                                     <%= pedido.nome_entregador %>
                                 </div>
-                                <ul class="item-info">
-                                    <p>Itens do pedido:</p>
-                                    <li>Item 1,</li>
-                                    <li>Item 2,</li>
-                                    <li>Item 3</li>
-                                </ul>
                                 <div class="item-info">
                                     <p>Observações: </p>
                                     <%= pedido.observacoes %>
@@ -86,7 +82,7 @@
 
                                 <div class="item-option">
                                     <div class="item-price">
-                                        <p class="price">Valor do Pedido: R$ 55,00</p>
+                                        <p class="price">Valor do Pedido: R$ <%= pedido.valor_total %></p>
                                     </div>
                                     <div class="options">
                                         <a class="btn btn-edit green border-radius" href="/pedido/<%=pedido.id_pedido%>/cadastrar-item"><i class='bx bx-edit'></i></a>

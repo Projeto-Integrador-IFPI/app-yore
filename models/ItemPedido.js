@@ -49,14 +49,13 @@ ItemPedido.prototype.find = async function(id_pedido) {
 
 
 ItemPedido.prototype.delete = async function(id) {
-    const query = 'delete from itens_pedido where id_ItemPedido = $1'
+    const query = 'delete from itens_pedido where id_item_pedido = $1'
     const values = [id];
 
     return pool
         .query(query, values)
         .then(res => res)
-        .catch(e => console.error(e.stack))   
+        .catch(e => console.error(e.stack))
 } 
-
 
 module.exports = ItemPedido;

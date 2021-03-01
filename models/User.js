@@ -13,7 +13,8 @@ User.prototype.login = function() {
                 usuarioRecuperado &&
                 bcrypt.compareSync(this.data.senha, usuarioRecuperado.senha)
             ) {
-                resolve('Login confere')
+                console.log('Login confere')
+                resolve(usuarioRecuperado)
             } else {
                 reject('Dados não conferem')
             }

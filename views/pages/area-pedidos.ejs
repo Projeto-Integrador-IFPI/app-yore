@@ -9,26 +9,28 @@
                     <p class="title">Pedidos agendados</p>
                 </div>
                 <div class="card-body">
-                    <ul class="historic-requests" draggable="true">
-                        <li class="historic-request-item">
-                            <p class="item-name">01 - John Doe, Av. Alguma Coisa - 455</p>
-                            <ul class="item-info task-info">
-                                <p>Itens do pedido:</p>
-                                <div class="item">
-                                    <li>Item 1,</li>
-                                    <li>Item 2,</li>
-                                    <li>Item 3</li>
+                    <% agendados.forEach(pedido => { %>
+                        <ul class="historic-requests" draggable="true">
+                            <li class="historic-request-item">
+                                <p class="item-name"><%=pedido.id_pedido%> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <ul class="item-info task-info">
+                                    <p>Itens do pedido:</p>
+                                    <div class="item">
+                                        <li>Item 1,</li>
+                                        <li>Item 2,</li>
+                                        <li>Item 3</li>
+                                    </div>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                </ul>
+                                <div class="historic-item-option">
+                                    <div class="options">
+                                        <a class="btn-check" href="/pedido/<%=pedido.id_pedido%>/status/3"><i class='bx bx-check'></i></a>
+                                        <a class="btn-uncheck" href="/pedido/<%=pedido.id_pedido%>/status/1"><i class='bx bx-x'></i></a>
+                                    </div>
                                 </div>
-                                <p class="item-price">Valor do Pedido: R$ 55,00</p>
-                            </ul>
-                            <div class="historic-item-option">
-                                <div class="options">
-                                    <a class="btn-check" href="#"><i class='bx bx-check'></i></a>
-                                    <a class="btn-uncheck" href="#"><i class='bx bx-x'></i></a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    <% }); %>                  
                 </div>
             </div>
             <div class="action mt-3">
@@ -43,26 +45,28 @@
                     <p class="title">Pedidos em entrega</p>
                 </div>
                 <div class="card-body">
-                    <ul class="historic-requests" draggable="true">
-                        <li class="historic-request-item">
-                            <p class="item-name">02 - John Doe, Av. Alguma Coisa - 455</p>
-                            <ul class="item-info task-info">
-                                <p>Itens do pedido:</p>
-                                <div class="item">
-                                    <li>Item 1,</li>
-                                    <li>Item 2,</li>
-                                    <li>Item 3</li>
+                    <% emEntrega.forEach(pedido => { %>
+                        <ul class="historic-requests" draggable="true">
+                            <li class="historic-request-item">
+                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <ul class="item-info task-info">
+                                    <p>Itens do pedido:</p>
+                                    <div class="item">
+                                        <li>Item 1,</li>
+                                        <li>Item 2,</li>
+                                        <li>Item 3</li>
+                                    </div>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                </ul>
+                                <div class="historic-item-option">
+                                    <div class="options">
+                                        <a class="btn-check" href="/pedido/<%=pedido.id_pedido%>/status/4"><i class='bx bx-check'></i></a>
+                                        <a class="btn-uncheck" href="/pedido/<%=pedido.id_pedido%>/status/2"><i class='bx bx-x'></i></a>
+                                    </div>
                                 </div>
-                                <p class="item-price">Valor do Pedido: R$ 55,00</p>
-                            </ul>
-                            <div class="historic-item-option">
-                                <div class="options">
-                                    <a class="btn-check" href="#"><i class='bx bx-check'></i></a>
-                                    <a class="btn-uncheck" href="#"><i class='bx bx-x'></i></a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    <% }); %>
                 </div>
             </div>
         </div>
@@ -72,26 +76,28 @@
                     <p class="title">Pedidos entregues</p>
                 </div>
                 <div class="card-body">
-                    <ul class="historic-requests" draggable="true">
-                        <li class="historic-request-item">
-                            <p class="item-name">03 - John Doe, Av. Alguma Coisa - 455</p>
-                            <ul class="item-info task-info">
-                                <p>Itens do pedido:</p>
-                                <div class="item">
-                                    <li>Item 1,</li>
-                                    <li>Item 2,</li>
-                                    <li>Item 3</li>
+                    <% entregues.forEach(pedido => { %>
+                        <ul class="historic-requests" draggable="true">
+                            <li class="historic-request-item">
+                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <ul class="item-info task-info">
+                                    <p>Itens do pedido:</p>
+                                    <div class="item">
+                                        <li>Item 1,</li>
+                                        <li>Item 2,</li>
+                                        <li>Item 3</li>
+                                    </div>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                </ul>
+                                <div class="historic-item-option">
+                                    <div class="options">                                        
+                                        <a class="btn-check" href="/pedido/<%=pedido.id_pedido%>/status/5"><i class='bx bx-check'></i></a>
+                                        <a class="btn-uncheck" href="/pedido/<%=pedido.id_pedido%>/status/3"><i class='bx bx-x'></i></a>
+                                    </div>
                                 </div>
-                                <p class="item-price">Valor do Pedido: R$ 55,00</p>
-                            </ul>
-                            <div class="historic-item-option">
-                                <div class="options">
-                                    <a class="btn-check" href="#"><i class='bx bx-check'></i></a>
-                                    <a class="btn-uncheck" href="#"><i class='bx bx-x'></i></a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    <% }); %>
                 </div>
             </div>
         </div>

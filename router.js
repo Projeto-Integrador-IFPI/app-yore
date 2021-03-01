@@ -20,10 +20,13 @@ router.post('/cadastrar-pedidos', pedidoController.save)
 router.get('/pedido-deletar/:id', pedidoController.deletar)
 
 //ITEM PEDIDO
-router.get('/pedido/:id_pedido/cadastrar-item', pedidoController.pedido)
+router.get('/pedido/:id_pedido/cadastrar-item', pedidoController.itemPedido)
 router.post('/pedido/:id_pedido/cadastrar-item', pedidoController.saveItemPedido)
+router.get('/pedido/:id_pedido/deletar-item/:id_item_pedido', pedidoController.deletarItemPedido)
 
-router.get('/itens-pedidos', pedidoController.itens_pedidos)
-router.get('/area-pedidos', pedidoController.area_pedidos)
+//AREA PEDIDOS
+router.get('/area-pedidos', pedidoController.areaPedidos)
+
+router.get('/pedido/:id_pedido/status/:status', pedidoController.alterarStatus)
 
 module.exports = router

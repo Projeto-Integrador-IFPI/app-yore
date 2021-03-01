@@ -44,7 +44,7 @@
                                 <%= item.nome_item%>
                             </p>
                             <ul class="item-info task-info">
-                                <p class="item-text">Quantidade: R$
+                                <p class="item-text">Quantidade:
                                     <%= item.quantidade_item%>
                                 </p>
                                 <p class="item-text">Valor do item: R$
@@ -55,12 +55,14 @@
                                 </p>
                             </ul>
                         </li>
-                        <button class="btn-remove--item border-radius">Remover produto</button>
+                        <form method="GET" action="/pedido/<%=id_pedido%>/deletar-item/<%=item.id_item_pedido%>">
+                            <button type="submit" class="btn-remove--item border-radius">Remover produto</button>
+                        </form>
                     </ul>
                     <% }); %>
             </div>
             <div class="card-footer smooth border-radius">
-                <p>Valor total do pedido: R$ <span>30,00</span></p>
+                <p>Valor total do pedido: R$ <span><%=valorTotal%></span></p>
             </div>
         </div>
     </div>

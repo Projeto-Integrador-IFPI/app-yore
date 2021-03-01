@@ -14,10 +14,10 @@ exports.signin = function(req, res) {
 
 exports.login = function(req, res) {
     let user = new User(req.body)
-    user.login().then(function(result) {
-        console.log(result);
+    user.login().then(function(result) {        
         req.session.user = {
-            username: user.data.username
+            username: user.data.username,
+            id_usuario: result.id_usuario
         }
         req.session.save(function() {
             res.redirect('/home')

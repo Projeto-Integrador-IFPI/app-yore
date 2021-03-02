@@ -8,7 +8,7 @@ const Pedido = function(data, username, endereco) {
 }
 
 Pedido.prototype.create = async function (id_usuario) {
-    const query = 'INSERT INTO pedidos(nome_destinatario, telefone_destinatario, observacoes, data_pedido, nome_entregador, status_pedido, logradouro, numero_logradouro, bairro, complemento, id_usuario ) values($1, $2, $3, $4, $5, 0, $6, $7, $8, $9, $10) RETURNING id_pedido';
+    const query = 'INSERT INTO pedidos(nome_destinatario, telefone_destinatario, observacoes, data_pedido, nome_entregador, status_pedido, logradouro, numero_logradouro, bairro, complemento, id_usuario ) values($1, $2, $3, $4, $5, 2, $6, $7, $8, $9, $10) RETURNING id_pedido';
     const values = [this.data.nome_destinatario, this.data.telefone_destinatario, this.data.observacoes, this.data.data_pedido, this.data.nome_entregador, this.data.logradouro, this.data.numero_logradouro, this.data.bairro, this.data.complemento, id_usuario];
     
     return pool

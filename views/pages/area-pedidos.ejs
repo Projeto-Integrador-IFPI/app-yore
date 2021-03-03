@@ -12,15 +12,19 @@
                     <% agendados.forEach(pedido => { %>
                         <ul class="historic-requests" draggable="true">
                             <li class="historic-request-item">
-                                <p class="item-name"><%=pedido.id_pedido%> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %></p>                                
+                                <p class="item-info"><strong>Endereço:</strong> <%=pedido.logradouro %>, <%=pedido.numero_logradouro %>, Bairro <%=pedido.bairro %> <%=pedido.complemento %></p>
+                                <p class="item-info"><strong>Telefone:</strong> <%=pedido.telefone_destinatario %></p>
+                                <p class="item-info"><strong>Entregador(a):</strong> <%=pedido.nome_entregador %></p>
+                                <p class="item-info"><strong>Observações:</strong> <%=pedido.observacoes %></p>
                                 <ul class="item-info task-info">
                                     <p>Itens do pedido:</p>
                                     <div class="item">
-                                        <li>Item 1,</li>
-                                        <li>Item 2,</li>
-                                        <li>Item 3</li>
+                                        <% pedido.itens.forEach((item, index) => { %>
+                                            <li><%if(index !== 0){%>- <% } %> <%=item.nome_item%></li>              
+                                        <% }); %>
                                     </div>
-                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>                                
                                 </ul>
                                 <div class="historic-item-option">
                                     <div class="options">
@@ -48,15 +52,19 @@
                     <% emEntrega.forEach(pedido => { %>
                         <ul class="historic-requests" draggable="true">
                             <li class="historic-request-item">
-                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %></p>                                
+                                <p class="item-info"><strong>Endereço:</strong> <%=pedido.logradouro %>, <%=pedido.numero_logradouro %>, Bairro <%=pedido.bairro %> <%=pedido.complemento %></p>
+                                <p class="item-info"><strong>Telefone:</strong> <%=pedido.telefone_destinatario %></p>
+                                <p class="item-info"><strong>Entregador(a):</strong> <%=pedido.nome_entregador %></p>
+                                <p class="item-info"><strong>Observações:</strong> <%=pedido.observacoes %></p>
                                 <ul class="item-info task-info">
                                     <p>Itens do pedido:</p>
                                     <div class="item">
-                                        <li>Item 1,</li>
-                                        <li>Item 2,</li>
-                                        <li>Item 3</li>
+                                        <% pedido.itens.forEach((item, index) => { %>
+                                            <li><%if(index !== 0){%>- <% } %> <%=item.nome_item%></li>              
+                                        <% }); %>
                                     </div>
-                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>                                
                                 </ul>
                                 <div class="historic-item-option">
                                     <div class="options">
@@ -79,15 +87,19 @@
                     <% entregues.forEach(pedido => { %>
                         <ul class="historic-requests" draggable="true">
                             <li class="historic-request-item">
-                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %>, <%=pedido.logradouro %> - <%=pedido.numero_logradouro %></p>
+                                <p class="item-name"><%=pedido.id_pedido %> - <%=pedido.nome_destinatario %></p>                                
+                                <p class="item-info"><strong>Endereço:</strong> <%=pedido.logradouro %>, <%=pedido.numero_logradouro %>, Bairro <%=pedido.bairro %> <%=pedido.complemento %></p>
+                                <p class="item-info"><strong>Telefone:</strong> <%=pedido.telefone_destinatario %></p>
+                                <p class="item-info"><strong>Entregador(a):</strong> <%=pedido.nome_entregador %></p>
+                                <p class="item-info"><strong>Observações:</strong> <%=pedido.observacoes %></p>
                                 <ul class="item-info task-info">
                                     <p>Itens do pedido:</p>
                                     <div class="item">
-                                        <li>Item 1,</li>
-                                        <li>Item 2,</li>
-                                        <li>Item 3</li>
+                                        <% pedido.itens.forEach((item, index) => { %>
+                                            <li><%if(index !== 0){%>- <% } %> <%=item.nome_item%></li>              
+                                        <% }); %>
                                     </div>
-                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>
+                                    <p class="item-price">Valor do Pedido: R$ <%=pedido.valor_total %></p>                                
                                 </ul>
                                 <div class="historic-item-option">
                                     <div class="options">                                        
@@ -98,6 +110,104 @@
                             </li>
                         </ul>
                     <% }); %>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <div class="row pt-4">
+        <div class="col">
+            <div class="card blacked border-radius">
+                <div class="card-header blue semi-radius">
+                    <p class="title">Pedidos não entregues</p>
+                </div>
+                <div class="card-body">
+                    <% naoEntregues.forEach(pedido => { %>
+                        <ul class="requests mb-3 border-radius">
+                            <li class="request-item">
+                                <p class="item-name">
+                                    <%= pedido.nome_destinatario %> ,
+                                        <%= pedido.logradouro %> -
+                                            <%= pedido.numero_logradouro %> -
+                                                <span style="color: gainsboro; font-weight: 600;"> Status: <%= pedido.nome_status %></span>
+                                </p>
+                                <% if (pedido.complemento) { %>
+                                    <div class="item-info mb-2">
+                                        <p>Complemento: </p>
+                                        <%= pedido.complemento %>
+                                    </div>
+                                <% } %>
+                                <div class="item-info mb-2">
+                                    <p>Entregador(a): </p>
+                                    <%= pedido.nome_entregador %>
+                                </div>
+                                <div class="item-info">
+                                    <p>Observações: </p>
+                                    <%= pedido.observacoes %>
+                                </div>
+
+                                <div class="item-option">
+                                    <div class="item-price">
+                                        <p class="price">Valor do Pedido: R$ <%= pedido.valor_total %></p>
+                                    </div>
+                                    <div class="options">
+                                        <a class="btn btn-edit green border-radius" href="/pedido/<%=pedido.id_pedido%>/cadastrar-item"><i class='bx bx-edit'></i></a>
+                                        <a class="btn btn-trash red border-radius" href="/pedido-deletar/<%=pedido.id_pedido%>"><i class='bx bx-trash'></i></a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row pt-4">
+        <div class="col">
+            <div class="card blacked border-radius">
+                <div class="card-header blue semi-radius">
+                    <p class="title">Pedidos concluidos</p>
+                </div>
+                <div class="card-body">
+                    <% concluidos.forEach(pedido => { %>
+                        <ul class="requests mb-3 border-radius">
+                            <li class="request-item">
+                                <p class="item-name">
+                                    <%= pedido.nome_destinatario %> ,
+                                        <%= pedido.logradouro %> -
+                                            <%= pedido.numero_logradouro %> -
+                                                <span style="color: gainsboro; font-weight: 600;"> Status: <%= pedido.nome_status %></span>
+                                </p>
+                                <% if (pedido.complemento) { %>
+                                    <div class="item-info mb-2">
+                                        <p>Complemento: </p>
+                                        <%= pedido.complemento %>
+                                    </div>
+                                <% } %>
+                                <div class="item-info mb-2">
+                                    <p>Entregador(a): </p>
+                                    <%= pedido.nome_entregador %>
+                                </div>
+                                <div class="item-info">
+                                    <p>Observações: </p>
+                                    <%= pedido.observacoes %>
+                                </div>
+
+                                <div class="item-option">
+                                    <div class="item-price">
+                                        <p class="price">Valor do Pedido: R$ <%= pedido.valor_total %></p>
+                                    </div>
+                                    <div class="options">
+                                        <a class="btn btn-edit green border-radius" href="/pedido/<%=pedido.id_pedido%>/cadastrar-item"><i class='bx bx-edit'></i></a>
+                                        <a class="btn btn-trash red border-radius" href="/pedido-deletar/<%=pedido.id_pedido%>"><i class='bx bx-trash'></i></a>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <% }); %>
                 </div>
             </div>
         </div>

@@ -87,14 +87,38 @@ Pedido.prototype.findLatest = async function(id_usuario) {
         .catch(e => console.error(e.stack))
 }
 
+Pedido.prototype.getItensName = async function (id_pedido) {
+    const query = 'select ip.nome_item from itens_pedido ip where ip.id_pedido = $1';
+    const values = [id_pedido]
+    return pool
+        .query(query, values)
+        .then(res => {
+            console.log(res.rows)
+            return res.rows
+        })
+        .catch(e => console.error(e.stack))
+}
+
 Pedido.prototype.findAll = async function(id_usuario) {
     const query = `
         select
             p.id_pedido,
             p.nome_destinatario, 
             p.logradouro,
+            p.bairro,
+            p.complemento,
             p.numero_logradouro,
+            p.telefone_destinatario,
             p.status_pedido,
+            p.nome_entregador, 
+            p.observacoes, 
+            case
+                when p.status_pedido = 1 then 'Não entregue'
+                when p.status_pedido = 2 then 'Agendado'
+                when p.status_pedido = 3 then 'Em Entrega'
+                when p.status_pedido = 4 then 'Entregue'
+                when p.status_pedido = 5 then 'Concluido'
+            end nome_status,
             coalesce(sum(ip.quantidade_item * ip.preco_item ), 0) as "valor_total"
         from 
             pedidos p 
@@ -108,7 +132,12 @@ Pedido.prototype.findAll = async function(id_usuario) {
             p.id_pedido,
             p.nome_destinatario,
             p.logradouro,
-            p.numero_logradouro,                        
+            p.numero_logradouro,
+            p.bairro,
+            p.complemento,
+            p.telefone_destinatario,
+            p.nome_entregador, 
+            p.observacoes,
             p.status_pedido`
 
     const values = [id_usuario]

@@ -78,20 +78,27 @@ exports.deletarItemPedido = function(req, res) {
         });
 }
 
-exports.areaPedidos = function(req, res) {
+exports.areaPedidos =  function(req, res) {
     let pedido = new Pedido()
     const {id_usuario} = req.session.user
 
     pedido
         .findAll(id_usuario)
-        .then(result => {
+        .then(async result => {
             let pedidos = result || [];
-            
-            const agendados = pedidos.filter(p => p.status_pedido == 2)
-            const emEntrega = pedidos.filter(p => p.status_pedido == 3)
-            const entregues = pedidos.filter(p => p.status_pedido == 4)
+            for (p of pedidos) {
+                p.itens = await pedido.getItensName(p.id_pedido)
+            }
 
-            res.render('pages/area-pedidos', { agendados, emEntrega, entregues })
+            
+                const naoEntregues = pedidos.filter(p => p.status_pedido == 1)
+                const agendados = pedidos.filter(p => p.status_pedido == 2)
+                const emEntrega = pedidos.filter(p => p.status_pedido == 3)
+                const entregues = pedidos.filter(p => p.status_pedido == 4)
+                const concluidos = pedidos.filter(p => p.status_pedido == 5)
+    
+                res.render('pages/area-pedidos', { agendados, emEntrega, entregues, naoEntregues, concluidos })
+                
         })
         .catch(function(err) {
             console.log(err);
